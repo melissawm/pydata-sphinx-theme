@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_static/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link href="../../_static/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link rel="shortcut icon" sizes="any" href="../../_static/favicon.ico" type="image/x-icon">
+    <link href="../../_static/android-chrome-192x192.png" sizes="192x192" rel="icon" type="image/png">
+    <link rel="mask-icon" color="#459db9" href="../../_static/safari-pinned-tab.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../_static/apple-touch-icon.png" sizes="180x180" type="image/png">
+    <meta name="msapplication-TileColor" content="#459db9">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileImage" content="mstile-150x150.png">
+    <title>Internationalization &#8212; PyData Theme 0.15.3dev0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=40f4526fa13751fa3657" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=40f4526fa13751fa3657" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=40f4526fa13751fa3657" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=40f4526fa13751fa3657" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css?v=572af1d6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vibur" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyterlite_sphinx.css?v=f996933d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e0805c85" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=40f4526fa13751fa3657" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=40f4526fa13751fa3657" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=40f4526fa13751fa3657"></script>
+
+    <script src="../../_static/documentation_options.js?v=7d5bc300"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
+    <script src="../../_static/jupyterlite_sphinx.js?v=f25406b8"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'community/topics/i18n';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.3dev0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        </script>
+    <script src="../../_static/custom-icon.js?v=40bda21d"></script>
+    <link rel="canonical" href="http://127.0.0.1:8000/community/topics/i18n.html" />
+    <link rel="icon" href="../../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Update our kitchen sink" href="kitchen-sink.html" />
+    <link rel="prev" title="Galleries and the gallery-grid directive" href="galleries.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Feb 02, 2024"/>
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+<script>
+document.write(`<div class="bd-header-announcement"></div>`);
+fetch("https://raw.githubusercontent.com/melissawm/pydata-sphinx-theme/empty-banner/docs/_static/empty-announcement.html")
+  .then(res => {return res.text();})
+  .then(data => {
+    if (data.length === 0) {
+      console.log("[PST]: Empty announcement at: https://raw.githubusercontent.com/melissawm/pydata-sphinx-theme/empty-banner/docs/_static/empty-announcement.html");
+      return;
+    } else {
+      div = document.querySelector(".bd-header-announcement");
+      div.classList.add(...["bd-header-announcement", "container-fluid", "init"]);
+      div.innerHTML = `<div class="bd-header-announcement__content">${data}</div>`;
+      // At least 3rem height
+      const autoHeight = Math.min(
+        div.offsetHeight,
+        3 * parseFloat(getComputedStyle(document.documentElement).fontSize));
+      // Set height and vertical padding to 0 to prepare the height transition
+      div.style.setProperty("height", 0);
+      div.style.setProperty("padding-top", 0);
+      div.style.setProperty("padding-bottom", 0);
+      div.classList.remove("init");
+      // Set height to the computed height with a small timeout to activate the transition
+      setTimeout(() => {
+        div.style.setProperty("height", `${autoHeight}px`);
+        // Wait for a bit more than 300ms (the transition duration) then remove the
+        // forcefully set styles and let CSS take over
+        setTimeout(() => {
+          div.style.removeProperty("padding-top");
+          div.style.removeProperty("padding-bottom");
+          div.style.removeProperty("height");
+          div.style.setProperty("min-height", "3rem");
+        }, 320);
+      }, 10);
+    }
+  })
+  .catch(error => {
+    console.log("[PST]: Failed to load announcement at: https://raw.githubusercontent.com/melissawm/pydata-sphinx-theme/empty-banner/docs/_static/empty-announcement.html");
+  });
+</script>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/logo-dark.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">PyData Theme</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Contributor Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://github.com/pydata/pydata-sphinx-theme/releases">
+                        Changelog
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../api/index.html">
+                        API
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+                    PyData
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+                    NumFocus
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+                    Donate to NumFocus
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pydata/pydata-sphinx-theme" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pydata-sphinx-theme" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pydata.org" title="PyData" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pydata-logo.png" class="icon-link-image" alt="PyData"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Contributor Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://github.com/pydata/pydata-sphinx-theme/releases">
+                        Changelog
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../../api/index.html">
+                        API
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://pydata.org">
+                    PyData
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/">
+                    NumFocus
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link dropdown-item nav-external" href="https://numfocus.org/donate">
+                    Donate to NumFocus
+                  </a>
+                </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pydata/pydata-sphinx-theme" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/pydata-sphinx-theme" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-custom fa-pypi fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pydata.org" title="PyData" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/pydata-logo.png" class="icon-link-image" alt="PyData"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Get started with development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../structure.html">Structure of this theme</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Topic guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility checks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assets.html">Web assets (CSS/JS/Fonts)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attribution.html">Ignore formatting commits with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">blame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html">Upgrade to bootstrap 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Update Sphinx configuration during the build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dependencies-js.html">Update JavaScript dependencies and their versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="galleries.html">Galleries and the <code class="docutils literal notranslate"><span class="pre">gallery-grid</span></code> directive</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kitchen-sink.html">Update our kitchen sink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual-dev.html">Set up a manual development environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nox.html">Using <code class="docutils literal notranslate"><span class="pre">nox</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-metadata.html">Page-level configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pre-commit.html">Using <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydata.html">PyData package support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="warnings.html">Expected build warnings</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Team practices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practices/merge.html">Merge and review policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practices/release.html">Making releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practices/versions.html">Supported Python and Sphinx versions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About the project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors to this theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inspiration.html">Inspiration for design and UX</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Contributor Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Topic guides</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Internationalization</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+<section id="internationalization">
+<h1>Internationalization<a class="headerlink" href="#internationalization" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This theme is still in the process of setting up internationalization.
+Some of the text below may not yet be correct (for example, we do not yet have a <code class="docutils literal notranslate"><span class="pre">locales/</span></code> directory).
+Follow these issues to track progress:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/pydata/pydata-sphinx-theme/issues/1162">pydata/pydata-sphinx-theme#1162</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/pydata/pydata-sphinx-theme/issues/257">pydata/pydata-sphinx-theme#257</a></p></li>
+</ul>
+</div>
+<p>Internationalization (I18N) and localization (L10N) is performed using <a class="reference external" href="https://docs.python.org/3/library/gettext.html">Gettext</a>.</p>
+<section id="types-of-files">
+<h2>Types of files<a class="headerlink" href="#types-of-files" title="Link to this heading">#</a></h2>
+<p>Gettext reads a program’s source and extracts text that has been marked as translatable, known as “source strings.
+Gettext uses three types of files:</p>
+<dl>
+<dt>PO file (<code class="docutils literal notranslate"><span class="pre">.po</span></code>)</dt><dd><p>A <a class="reference external" href="https://www.gnu.org/software/gettext/manual/gettext.html#PO-Files">Portable Object (PO) file</a> is made up of many entries.
+Each entry holds the relation between a source string and its translation.
+<code class="docutils literal notranslate"><span class="pre">msgid</span></code> contains the <strong>source string</strong>, and <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> contains the <strong>translation</strong>.
+In a given PO file, all translations are expressed in a single target language.
+PO files are also known as “message catalogs”.</p>
+<p>Entries begin with comments, on lines starting with the character <code class="docutils literal notranslate"><span class="pre">#</span></code>.
+Comments are created and maintained by Gettext.
+Comment lines starting with <code class="docutils literal notranslate"><span class="pre">#:</span></code> contain references to the program’s source.
+These references allow a human translator to find the source strings in their original context.
+Comment lines starting with <code class="docutils literal notranslate"><span class="pre">#,</span></code> contain flags like <code class="docutils literal notranslate"><span class="pre">python-format</span></code>, which indicates that the source string contains placeholders like <code class="docutils literal notranslate"><span class="pre">%(copyright)s</span></code>.</p>
+</dd>
+<dt>POT file (<code class="docutils literal notranslate"><span class="pre">.pot</span></code>)</dt><dd><p>A Portable Object Template (POT) file is the same as a PO file, except the translations are empty, so that it can be used as a template for new languages.</p>
+</dd>
+<dt>MO file (<code class="docutils literal notranslate"><span class="pre">.mo</span></code>)</dt><dd><p>A Machine Object (MO) file is a binary version of a PO file. PO files are compiled to MO files, which are required by Gettext.</p>
+</dd>
+</dl>
+</section>
+<section id="mark-natural-language-text-as-translateable">
+<span id="adding-natural-language-text"></span><h2>Mark natural language text as translateable<a class="headerlink" href="#mark-natural-language-text-as-translateable" title="Link to this heading">#</a></h2>
+<p>All natural language text must be marked as translatable, so that it can be extracted by Gettext and translated by humans.</p>
+<p>Jinja2 provides a <code class="docutils literal notranslate"><span class="pre">trans</span></code> block and a <code class="docutils literal notranslate"><span class="pre">_()</span></code> function to mark text as translatable.
+<a class="reference external" href="https://jinja.palletsprojects.com/en/2.11.x/templates/#i18n">Please refer to the Jinja2 documentation</a>.
+Remember to <a class="reference external" href="https://jinja.palletsprojects.com/en/2.11.x/templates/#working-with-manual-escaping">manually escape</a> variables if needed.</p>
+<p>Any text that is marked in this way will be discoverable by <code class="docutils literal notranslate"><span class="pre">gettext</span></code> and used to generate <code class="docutils literal notranslate"><span class="pre">.po</span></code> files (see below for information).
+Once you’ve marked text as translateable, complete the steps for <a class="reference internal" href="#changing-natural-language-text"><span class="std std-ref">Add or change natural language text</span></a>.</p>
+</section>
+<section id="add-or-change-natural-language-text">
+<span id="changing-natural-language-text"></span><h2>Add or change natural language text<a class="headerlink" href="#add-or-change-natural-language-text" title="Link to this heading">#</a></h2>
+<p>These steps cover how to add or change text that has been marked as translateable.</p>
+<ol class="arabic">
+<li><p>Edit the natural language text as desired.
+Ensure that it is {ref}`marked as translateable &lt;adding-natural-language-text&gt;`.</p></li>
+<li><p>Generate/update the message catalog template (<code class="docutils literal notranslate"><span class="pre">POT</span></code> file) with <a class="reference external" href="https://babel.pocoo.org/en/latest/cmdline.html#extract">the PyBabel extract command</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pybabel<span class="w"> </span>extract<span class="w"> </span>.<span class="w"> </span>-F<span class="w"> </span>babel.cfg<span class="w"> </span>-o<span class="w"> </span>src/pydata_sphinx_theme/locale/sphinx.pot<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;_ __ l_ lazy_gettext&#39;</span>
+</pre></div>
+</div>
+<p><strong>To run this in ``.nox``</strong>: <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">translate</span> <span class="pre">--</span> <span class="pre">extract</span></code>.</p>
+</li>
+<li><p>Update the message catalogs (<code class="docutils literal notranslate"><span class="pre">PO</span></code> files) with <a class="reference external" href="https://babel.pocoo.org/en/latest/cmdline.html#update">the PyBabel update command</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pybabel<span class="w"> </span>update<span class="w"> </span>-i<span class="w"> </span>src/pydata_sphinx_theme/locale/sphinx.pot<span class="w"> </span>-d<span class="w"> </span>src/pydata_sphinx_theme/locale<span class="w"> </span>-D<span class="w"> </span>sphinx
+</pre></div>
+</div>
+<p><strong>To run this in ``.nox``</strong>: <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">translate</span> <span class="pre">--</span> <span class="pre">update</span></code>.</p>
+</li>
+</ol>
+<p>This will update these files with new information about the position and text of the language you have modified.</p>
+<p>If you <em>only</em> change non-translatable text (like HTML markup), the <cite>extract</cite> and <cite>update</cite> commands will only update the positions (line numbers) of the translatable strings. Updating positions is optional - the line numbers are to inform the human translator, not to perform the translation.</p>
+<p>If you change translatable strings, the <cite>extract</cite> command will extract the new or updated strings to the POT file, and the <cite>update</cite> command will try to fuzzy match the new or updated strings with existing translations in the PO files.
+If there is a fuzzy match, a comment like <cite>#, fuzzy</cite> is added before the matched entry.
+Otherwise, a new entry is added and needs to be translated.</p>
+</section>
+<section id="add-translations-to-translateable-text">
+<span id="translating-the-theme"></span><h2>Add translations to translateable text<a class="headerlink" href="#add-translations-to-translateable-text" title="Link to this heading">#</a></h2>
+<p>Once text has been marked as translateable, and <code class="docutils literal notranslate"><span class="pre">PO</span></code> files have been generated for it, we may add translations for new languages for the phrase.
+This section covers how to do so.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These steps use the Spanish language as an example.
+To translate the theme to another language, replace <code class="docutils literal notranslate"><span class="pre">es</span></code> with the language’s two-letter lowercase <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 code</a>.</p>
+</div>
+<ol class="arabic">
+<li><p>If the language’s code matches no sub-directory of the <a class="reference external" href="https://github.com/pydata/pydata-sphinx-theme/tree/main/pydata_sphinx_theme/locale">pydata_sphinx_theme/locale</a> directory, initialize the language’s message catalog (PO file) with <a class="reference external" href="https://babel.pocoo.org/en/latest/cmdline.html#init">PyBabel init</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pybabel<span class="w"> </span>init<span class="w"> </span>-i<span class="w"> </span>src/pydata_sphinx_theme/locale/sphinx.pot<span class="w"> </span>-d<span class="w"> </span>src/pydata_sphinx_theme/locale<span class="w"> </span>-D<span class="w"> </span>sphinx<span class="w"> </span>-l<span class="w"> </span>es
+</pre></div>
+</div>
+<p><strong>To run this in ``.nox``</strong>: <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">translate</span> <span class="pre">--</span> <span class="pre">init</span> <span class="pre">es</span></code></p>
+</li>
+<li><p>Edit the language’s message catalog at <code class="docutils literal notranslate"><span class="pre">pydata_sphinx_theme/locale/es/LC_MESSAGES/sphinx.po</span></code>. For each source string introduced by the <code class="docutils literal notranslate"><span class="pre">msgid</span></code> keyword, add its translation after the <code class="docutils literal notranslate"><span class="pre">msgstr</span></code> keyword.</p></li>
+<li><p>Compile the message catalogs of every language. This creates or updates the MO files with <a class="reference external" href="https://babel.pocoo.org/en/latest/cmdline.html#compile">PyBabel compile</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pybabel<span class="w"> </span>compile<span class="w"> </span>-d<span class="w"> </span>src/pydata_sphinx_theme/locale<span class="w"> </span>-D<span class="w"> </span>sphinx
+</pre></div>
+</div>
+<p><strong>To run this in ``.nox``</strong>: <code class="docutils literal notranslate"><span class="pre">nox</span> <span class="pre">-s</span> <span class="pre">translate</span> <span class="pre">--</span> <span class="pre">compile</span></code>.</p>
+</li>
+</ol>
+</section>
+<section id="translation-tips">
+<h2>Translation tips<a class="headerlink" href="#translation-tips" title="Link to this heading">#</a></h2>
+<section id="translate-phrases-not-words">
+<h3>Translate phrases, not words<a class="headerlink" href="#translate-phrases-not-words" title="Link to this heading">#</a></h3>
+<p>Full sentences and clauses must always be a single translatable string.
+Otherwise, you can get <code class="docutils literal notranslate"><span class="pre">next</span> <span class="pre">page</span></code> translated as <code class="docutils literal notranslate"><span class="pre">suivant</span> <span class="pre">page</span></code> instead of as <code class="docutils literal notranslate"><span class="pre">page</span> <span class="pre">suivante</span></code>, etc.</p>
+</section>
+<section id="deal-with-variables-and-markup-in-translations">
+<h3>Deal with variables and markup in translations<a class="headerlink" href="#deal-with-variables-and-markup-in-translations" title="Link to this heading">#</a></h3>
+<p>If a variable (like the <code class="docutils literal notranslate"><span class="pre">edit_page_provider_name</span></code> theme option) is used as part of a phrase, it must be included within the translatable string.
+Otherwise, the word order in other languages can be incorrect.
+In a Jinja template, simply surround the translatable string with <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">trans</span> <span class="pre">variable=variable</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endtrans</span> <span class="pre">%}}`.</span>
+<span class="pre">For</span> <span class="pre">example:</span> <span class="pre">``{%</span> <span class="pre">trans</span> <span class="pre">provider=provider</span> <span class="pre">%}Edit</span> <span class="pre">on</span> <span class="pre">{{</span> <span class="pre">provider</span> <span class="pre">}}{%</span> <span class="pre">endtrans</span> <span class="pre">%}</span></code>
+The translatable string is extracted as the Python format string <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">on</span> <span class="pre">%(provider)s</span></code>.
+This is so that the same translatable string can be used in both Python code and Jinja templates.
+It is the translator’s responsibility to use <code class="docutils literal notranslate"><span class="pre">%(provider)s</span></code> verbatim in the translation.</p>
+<p>If a non-translatable word or token (like HTML markup) is used as part of a phrase, it must also be included within the translatable string.
+For example: <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">trans</span> <span class="pre">theme_version=theme_version|e</span> <span class="pre">%}Built</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">&lt;a</span> <span class="pre">href=&quot;https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html&quot;&gt;PyData</span> <span class="pre">Sphinx</span> <span class="pre">Theme&lt;/a&gt;</span> <span class="pre">{{</span> <span class="pre">theme_version</span> <span class="pre">}}.{%</span> <span class="pre">endtrans</span> <span class="pre">%}</span></code>
+It is the translator’s responsibility to use the HTML markup verbatim in the translation.</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p>I18N and L10N are deep topics. Here, we only cover the bare minimum needed to fulfill basics technical tasks. You might like:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=0j74jcxSunY">Internationalis(z)ing Code</a> by Computerphile on YouTube</p></li>
+<li><p><a class="reference external" href="http://garbled.benhamill.com/2017/04/18/falsehoods-programmers-believe-about-language">Falsehoods Programmers Believe About Language</a> by Ben Hamill</p></li>
+</ul>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+  
+  
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="galleries.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Galleries and the <code class="docutils literal notranslate"><span class="pre">gallery-grid</span></code> directive</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="kitchen-sink.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Update our kitchen sink</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-files">Types of files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mark-natural-language-text-as-translateable">Mark natural language text as translateable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-or-change-natural-language-text">Add or change natural language text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-translations-to-translateable-text">Add translations to translateable text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-tips">Translation tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translate-phrases-not-words">Translate phrases, not words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-variables-and-markup-in-translations">Deal with variables and markup in translations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pydata/pydata-sphinx-theme/edit/main/docs/community/topics/i18n.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/community/topics/i18n.rst">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=40f4526fa13751fa3657"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=40f4526fa13751fa3657"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2019, PyData Community.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.3dev0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
